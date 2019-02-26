@@ -40,6 +40,13 @@ font-size: 20px;
 
 }
 
+input[type="text"]:focus{
+    outline:none;
+}
+input[type="number"]{
+    outline:none;
+}
+
 button{
     height: 80px;
     width: 150px;
