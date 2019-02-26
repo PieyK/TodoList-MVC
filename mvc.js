@@ -1,24 +1,6 @@
 var todoList = {
     todos: [],
 
-    /* displayTodos: function (){
-   
-    if(this.todos.length === 0){
-      console.log("You have no todos in your todolist");
-    } 
-    else {
-    console.log("My Todos: ");
-      for(var i = 0; i < this.todos.length; i++){
-      if(this.todos[i].completed === true){
-      console.log("(x) " + this.todos[i].todoText);
-      }
-      else{
-       console.log("( )" + this.todos[i].todoText); 
-      }
-        }
-      }
-    }, */
-
     addTodo: function (todoText) {
         this.todos.push({
             todoText: todoText,
@@ -52,8 +34,7 @@ var todoList = {
             if (this.todos[i].completed === true) {
                 completedTodos++;
             }
-
-        }
+    }
 
         //If everything is true, make everything false
         if (completedTodos === totalTodos) {
@@ -68,16 +49,10 @@ var todoList = {
             }
         }
         //this.displayTodos();
-
     }
-
 };
 
-/*var displayTodosButton = document.getElementById("displayTodosButton");
-displayTodosButton.addEventListener("click", function(){
-  todoList.displayTodos();
-  });
-*/
+
 var handlers = {
 
     addTodo: function () {
@@ -113,7 +88,6 @@ var handlers = {
         todoList.toggleAll();
         view.displayTodos();
     }
-
 };
 
 
@@ -128,17 +102,14 @@ var view = {
 
             var todoTextCompleted = "";
 
-
             if (todo.completed == true) {
                 todoTextCompleted = "(x)" + todoList.todos[i].todoText;
             } else {
                 todoTextCompleted = "( )" + todoList.todos[i].todoText;
             }
-
-
+            
             todoLi.textContent = todoTextCompleted;
             todoUl.appendChild(todoLi);
         }
     }
-
 };
